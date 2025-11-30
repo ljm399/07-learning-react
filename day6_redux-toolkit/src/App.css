@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  justify-content: space-around;
+}
+.App > div {
+  flex:1;
+  border: 1px solid #000;
+  padding: 10px;
+}
