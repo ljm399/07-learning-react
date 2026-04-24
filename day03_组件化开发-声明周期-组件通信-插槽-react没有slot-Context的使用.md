@@ -133,7 +133,7 @@ const btn = <button>按钮></button>
 
 
 
-```
+```jsx
 父:
 	gitTabItem(item) {
 		if(item=="流行"){
@@ -153,8 +153,6 @@ const btn = <button>按钮></button>
 子:
 
 	<div>{itemType{item}}</div>
-				
-	
 ```
 
 
@@ -169,6 +167,8 @@ const btn = <button>按钮></button>
 
 
 
+
+
 #### 1.8.1. spread props/attributes
 
 - 一层层传递
@@ -180,7 +180,10 @@ const btn = <button>按钮></button>
   子孙 就可以拿到info的数据 
   ```
 
-  
+
+
+
+
 
 
 
@@ -188,7 +191,7 @@ const btn = <button>按钮></button>
 
 - 1.创建Context
 
-  - ```
+  - ```jsx
     xx.js
     import React from 'react'
     const ThemeContext = React.createContext()
@@ -199,17 +202,17 @@ const btn = <button>按钮></button>
 
 - 2.Context.Provider提供value
 
-  - ```
+  - ```jsx
     在具体xx.jsx导入上面的xx.js
     <ThemeContext.Provider Value={{color:"red",size:'30'}}
     </ThemeContext.Provider>
     ```
 
-  - 
+
 
 - 3.类组件ContextType = Context(订阅)
 
-  - ```
+  - ```jsx
     在其他组件如HomeInfo中导入
     import ThemeContext from './Context/xx.js'
     HomeInfo.ContextType = ThemeContext(订阅)
@@ -219,7 +222,7 @@ const btn = <button>按钮></button>
 
 - 4.类组件this.context
 
-  - ```
+  - ```jsx
     HomeInfo:
     <div>{this.context.color}</div>
     ```
@@ -237,7 +240,7 @@ const btn = <button>按钮></button>
    - Context.Consumer
      - value => {}
      
-     ```
+     ```jsx
      <ThemeContext.Consumer>
      	{
      		value => {
@@ -274,7 +277,9 @@ const btn = <button>按钮></button>
        不在<UserContext.Provider....></...>里面
        如在这里<Home {...info}/> 则在home组件里面info没有数据
        ```
-     - 
+     
+     
+     
    - 那么使用的defaultValue值
    
      - ````
@@ -283,16 +288,3 @@ const btn = <button>按钮></button>
        const ThemeContext = React.createContext({color:'red',size:"30"})
        export default ThemeContext
        ````
-   
-     - 
-
-
-
-
-
-
-
-
-
-
-

@@ -2,15 +2,13 @@
 
 - hy-event-bus
 
-
-
 - 步骤
 
   - npm install event-bus
 
   - xx.js不是jsx,放在一个文件中,那其他文件引用方便,而不是每个文件都写一次
 
-    - ```
+    - ```jsx
       import {HYEventBus} from "hy-event-store"
       const eventBus = new HYEventBus()
       export default eventBus
@@ -18,21 +16,20 @@
 
   - 使用的组件
 
-    - ```
+    - ```jsx
       import eventBus from "./xx.js"
       ```
 
-    - ```
+    - ```jsx
       都是在在类中 
       import React, { Component } from "react"
-      export class Home extends Component {
-      	
+      export class Home extends Component {	
       }
       ```
-
+      
     - 主组件:在类中的生命周期中
-
-      ```//
+    
+      ```jsx
       //生命周期:挂载是回调
       ComponentDidMount() {
       	//第三个参数可以帮你this
@@ -48,10 +45,10 @@
       	eventBus.off("bannerPrev", this.bannerPrevClick)
       }
       ```
-
+    
     - 其他要传递数据到主组件的组件
-
-      - ```
+    
+      - ```jsx
         也是和主组件中在类中,但不用再生命周期函数中,因为让你来控制这个函数什么时候传递数据给主组件
         export class Home extends Component {	
         	preClick() {
@@ -59,8 +56,6 @@
         	}
         }
         ```
-
-      - 
 
 
 
@@ -187,13 +182,13 @@
   - 两个参数
     - nextProps
     
-    - nextProps
+    - nextState
     
     - nextContext(一般用不到)
     
       - 当全局Context里面的数据改变,你可以根据这个判断要不要调用render
     
-        ```
+        ```jsx
         class MyComponent extends React.Component {
           shouldComponentUpdate(nextProps, nextState, nextContext) {
             console.log('当前 context:', this.context);
@@ -215,7 +210,7 @@
   
   - 在子组件中和主组件都可以有SCU
   
-    - ```
+    - ```jsx
       construct(props) {
       	super(props)
       	
@@ -304,7 +299,7 @@
 - 修改state中的某一个数据(引用类型)
   - 先对数据进行拷贝操作
   - 修改拷贝之后对象,设置新对象
-  - ```
+  - ```jsx
     const newbook = {name: "Angular高级设计", price: 88}
     1.直接修改原有的state,重新设置一遍
     this.state.books.push(newbook)
@@ -316,7 +311,8 @@
     books.push(newbook)
     
     ```
-  - 
+  
+  
 
 
 
@@ -324,7 +320,7 @@
 
 ### 4.1.ref获取DOM
 
-```
+```jsx
 export class App extends PureComponent {
 	render() {
 		return (
@@ -342,7 +338,7 @@ export class App extends PureComponent {
 
 - 不推荐方式
 
-  - ```
+  - ```jsx
     getDom() {
     	const h2El = document.querySelector()
     }
@@ -354,13 +350,13 @@ export class App extends PureComponent {
 
   1. 直接在React元素上绑定一个ref字符串
 
-     ```
+     ```jsx
      clg(this.refs.cao) ----已废弃
      ```
 
   2. 方式二:提前创建好ref对象,createRef(),将创建出来的对象绑定到元素
 
-     ```
+     ```jsx
      引入createRef import React,{ PureComponent, createRef } from "react"
      
      在类中的构造函数中 
@@ -375,7 +371,7 @@ export class App extends PureComponent {
 
   3. 方式三
 
-     ```
+     ```jsx
      在类中的构造函数中 
      construct() {
      	this.titleEl = null
@@ -396,7 +392,7 @@ export class App extends PureComponent {
 
 - 类组件的实例(如text)
 
-  - ```
+  - ```jsx
     引入createRef import React,{ PureComponent, createRef } from "react"
     class 其他组件 extends PureComponent {
     	text() {

@@ -187,7 +187,7 @@ root.render(<App/>)
 
 
 - JSX是JavaScript语法的扩展,他可以将UI界面和JavaScript融合一起
-  - const e = <div>hello</div>
+  - const e = < div>hello< /div>
   - 故有"all in jsx"
     - html in js
     - css in js
@@ -201,7 +201,7 @@ root.render(<App/>)
 ### 3.2. JSX的书写规范
 
 - 必须有根元素
-  - 不能并列两个<div>,只能一个
+  - 不能并列两个< div>,只能一个
 
 - 推荐()包裹  方便阅读
   - 在jsx的外层包裹一个()
@@ -298,7 +298,6 @@ const {title, imgurl, href, className} = this.state
       ```
 
       
-
 
 
 
