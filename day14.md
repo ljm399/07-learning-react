@@ -493,19 +493,20 @@ export const SectionWrapper = styled.div`
 
 
 
-### 三. 自动化部署
+# 三. 自动化部署
 
 ### 3.1. 先购买服务器和Nginx环境的搭建
 
 **Nginx作用：高性能的 Web 服务器和反向代理服务器**
 
 - **主要功能**
+  
   1. **静态资源托管**：把前端 React/Vue 项目的 `build` 文件夹放进去，用户访问网站时，Nginx 就把 `index.html`、CSS、JS 静态文件返回给浏览器。
   2. **反向代理**：用户访问 `http://example.com/api`，Nginx 可以把请求转发到后端（比如 Node.js、Spring Boot、Go 服务）。
   3. **负载均衡**：如果有多个后端服务，Nginx 可以分发请求，提升并发性能。
   4. **HTTPS 配置**：通过 SSL 证书让网站支持 `https://`。
-
-- 安装命令（CentOS）：
+  
+-  CentOS安装命令
 
   ```bash
   # 安装 Nginx
@@ -521,7 +522,7 @@ export const SectionWrapper = styled.div`
   sudo systemctl status nginx
   ```
 
-  安装命令（Ubuntu）：
+  Ubuntu安装命令
 
   ```bash
   # 更新软件源
@@ -592,8 +593,6 @@ sudo systemctl reload nginx  # 重新加载配置
 
 
 ### 3.2. Jenkins环境的搭建 -- 需要java环境
-
-
 
 - 安装java
 
